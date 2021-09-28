@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Libreria</title>
+</head>
+<body>
+<h1>Libreria</h1>
+<span th:if="${#lists.isEmpty(bookList)}">La libreria &egrave vuota</span>
+
+
+<span th:unless="${#lists.isEmpty(bookList)}"><h1>Elenco dei libri presenti:</h1>
+	<ul th:each="book : ${bookList}">
+    <li th:text="${book.titolo}"></li>
+    </ul>
+</span>
+
+
+</body>
+</html>
